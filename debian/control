@@ -1,0 +1,24 @@
+Source: openhrp
+Priority: extra
+Maintainer: Thomas Moulard <thomas.moulard@gmail.com>
+Build-Depends: debhelper (>= 7.0.50), cmake (>= 2.6),
+	       doxygen (>= 1.6.3),
+	       graphviz,
+	       libboost-all-dev
+Standards-Version: 3.9.3
+Section: contrib/science
+Homepage: http://www.openrtm.org/
+Vcs-Git: git://github.com/thomas-moulard/openhrp-deb.git
+Vcs-Browser: https://github.com/thomas-moulard/openhrp-deb
+
+Package: openhrp
+Architecture: any
+Section: contrib/science
+Depends: ${misc:Depends}
+Description: OpenHRP3 is an integrated software platform for robot simulations and software developments
+ OpenHRP3 (Open Architecture Human-centered Robotics Platform version
+ 3) is an integrated software platform for robot simulations and
+ software developments. It allows the users to inspect an original
+ robot model and control program by dynamics simulation. In addition,
+ OpenHRP3 provides various software components and calculation
+ libraries that can be used for robotics related software developments.
