@@ -14,11 +14,39 @@ Vcs-Browser: https://github.com/thomas-moulard/openhrp-deb
 Package: openhrp
 Architecture: any
 Section: contrib/science
-Depends: ${misc:Depends}
-Description: OpenHRP3 is an integrated software platform for robot simulations and software developments
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Integrated software platform for robot simulation
  OpenHRP3 (Open Architecture Human-centered Robotics Platform version
  3) is an integrated software platform for robot simulations and
  software developments. It allows the users to inspect an original
  robot model and control program by dynamics simulation. In addition,
  OpenHRP3 provides various software components and calculation
  libraries that can be used for robotics related software developments.
+
+Package: openhrp-dev
+Architecture: any
+Section: contrib/devel
+Depends: openhrp (= ${binary:Version}), ${misc:Depends}
+Description: Integrated software platform for robot simulation (development files)
+ OpenHRP3 (Open Architecture Human-centered Robotics Platform version
+ 3) is an integrated software platform for robot simulations and
+ software developments. It allows the users to inspect an original
+ robot model and control program by dynamics simulation. In addition,
+ OpenHRP3 provides various software components and calculation
+ libraries that can be used for robotics related software developments.
+ .
+ This package gathers development files required to use OpenHRP API.
+
+Package: openhrp-dbg
+Architecture: any
+Section: contrib/debug
+Depends: openhrp (= ${binary:Version}), ${misc:Depends}
+Description: Integrated software platform for robot simulation (debugging files)
+ OpenHRP3 (Open Architecture Human-centered Robotics Platform version
+ 3) is an integrated software platform for robot simulations and
+ software developments. It allows the users to inspect an original
+ robot model and control program by dynamics simulation. In addition,
+ OpenHRP3 provides various software components and calculation
+ libraries that can be used for robotics related software developments.
+ .
+ This package contains the debugging symbols.

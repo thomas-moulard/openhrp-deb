@@ -4,5 +4,23 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+.PHONY: override_dh_auto_clean override_dh_strip
+
 %:
 	dh  $@
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -f GrxUIonEclipse-project-*/.classpath \
+GrxUIonEclipse-project-*/META-INF/MANIFEST.MF \
+GrxUIonEclipse-project-*/build.properties \
+GrxUIonEclipse-project-*/jython.jar \
+GrxUIonEclipse-project-*/openhrpstubskel.jar \
+GrxUIonEclipse-project-*/plugin.xml \
+GrxUIonEclipse-project-*/src/com/generalrobotix/ui/depends/rtm/ClockGeneratorRtm_impl.java \
+GrxUIonEclipse-project-*/src/com/generalrobotix/ui/grxui/PreferenceInitializer.java \
+hrplib/hrpModel/Config.h
+
+
+override_dh_strip:
+	dh_strip -a --dbg-package=openhrp-dbg
