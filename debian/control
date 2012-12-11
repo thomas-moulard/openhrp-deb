@@ -5,6 +5,14 @@ Build-Depends: debhelper (>= 7.0.50), cmake (>= 2.6),
 	       doxygen (>= 1.6.3),
 	       graphviz,
 	       libboost-all-dev,
+	       liblapack-dev,
+	       libf2c2-dev,
+	       libeigen3-dev,
+	       libjpeg-dev,
+	       libpng-dev,
+	       openjdk-6-jdk,
+	       openjdk-6-jre,
+	       jython,
 	       libopenrtm-aist-dev
 Standards-Version: 3.9.3
 Section: contrib/science
