@@ -31,7 +31,7 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules/)
 
 include(FindPkgConfig)
 include(CheckIncludeFiles)
-include(${CMAKE_MODULE_PATH}GetUbuntuVer.cmake)
+#include(${CMAKE_MODULE_PATH}GetUbuntuVer.cmake)
 
 # Enable SSE options
 # include(${CMAKE_MODULE_PATH}FindSSEArchitecture.cmake)
