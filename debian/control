@@ -4,7 +4,8 @@ Maintainer: Thomas Moulard <thomas.moulard@gmail.com>
 Build-Depends: debhelper (>= 7.0.50), cmake (>= 2.6),
 	       doxygen (>= 1.6.3),
 	       graphviz,
-	       libboost-all-dev
+	       libboost-all-dev,
+	       libopenrtm-aist-dev
 Standards-Version: 3.9.3
 Section: contrib/science
 Homepage: http://www.openrtm.org/
@@ -26,7 +27,7 @@ Description: Integrated software platform for robot simulation
 Package: openhrp-dev
 Architecture: any
 Section: contrib/devel
-Depends: openhrp (= ${binary:Version}), ${misc:Depends}
+Depends: openhrp (= ${binary:Version}), ${misc:Depends}, libopenrtm-aist-dev
 Description: Integrated software platform for robot simulation (development files)
  OpenHRP3 (Open Architecture Human-centered Robotics Platform version
  3) is an integrated software platform for robot simulations and
