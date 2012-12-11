@@ -1,0 +1,52 @@
+From: Thomas Moulard <thomas.moulard@gmail.com>
+Date: Tue, 11 Dec 2012 16:27:40 +0900
+Subject: [PATCH] Move intrusive_ptr_ref_add and intrusive_ptr_release from boost to hrp namespace
+
+---
+ hrplib/hrpUtil/Referenced.h |   16 ++++++++--------
+ 1 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/hrplib/hrpUtil/Referenced.h b/hrplib/hrpUtil/Referenced.h
+index 7139e38..aa95617 100644
+--- a/hrplib/hrpUtil/Referenced.h
++++ b/hrplib/hrpUtil/Referenced.h
+@@ -11,9 +11,9 @@ namespace hrp {
+     class Referenced;
+ }
+ 
+-namespace boost{
+-    void intrusive_ptr_add_ref(hrp::Referenced* obj);
+-    void intrusive_ptr_release(hrp::Referenced* obj);
++namespace hrp{
++    void intrusive_ptr_add_ref(Referenced* obj);
++    void intrusive_ptr_release(Referenced* obj);
+ }
+ 
+ namespace hrp {
+@@ -28,20 +28,20 @@ namespace hrp {
+         int refCounter() { return refCounter_; }
+ 
+       private:
+-        friend void boost::intrusive_ptr_add_ref(Referenced* obj);
+-        friend void boost::intrusive_ptr_release(Referenced* obj);
++        friend void intrusive_ptr_add_ref(Referenced* obj);
++        friend void intrusive_ptr_release(Referenced* obj);
+ 
+         int refCounter_;
+     };
+ }
+ 
+-namespace boost
++namespace hrp
+ {
+-    inline void intrusive_ptr_add_ref(hrp::Referenced* obj){
++    inline void intrusive_ptr_add_ref(Referenced* obj){
+         obj->refCounter_++;
+     }
+ 
+-    inline void intrusive_ptr_release(hrp::Referenced* obj){
++    inline void intrusive_ptr_release(Referenced* obj){
+         obj->refCounter_--;
+         if(obj->refCounter_ == 0){
+             delete obj;
+-- 

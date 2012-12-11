@@ -1,1 +1,2 @@
 0001-Do-not-look-for-Ubuntu-version-on-Debian.patch
+0002-Move-intrusive_ptr_ref_add-and-intrusive_ptr_release.patch
