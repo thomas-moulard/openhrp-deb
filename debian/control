@@ -22,6 +22,7 @@ Vcs-Browser: https://github.com/thomas-moulard/openhrp-deb
 
 Package: openhrp
 Architecture: any
+Pre-depends: ${misc:Pre-Depends}
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Integrated software platform for robot simulation
  OpenHRP3 (Open Architecture Human-centered Robotics Platform version

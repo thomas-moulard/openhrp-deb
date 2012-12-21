@@ -8,8 +8,7 @@ binary-without-manpage usr/bin/openhrp-path-planner
 binary-without-manpage usr/bin/openhrp-shutdown-servers
 binary-without-manpage usr/bin/openhrp-ut-dynamics-simulator
 package-name-doesnt-match-sonames libhrpCollision-3.1-0 libhrpModel-3.1-0 libhrpPlanner-3.1-0 libhrpUtil-3.1-0 libsDIMS0
-no-symbols-control-file usr/lib/libhrpCollision-3.1.so.0.0.0
-no-symbols-control-file usr/lib/libhrpPlanner-3.1.so.0.0.0
-no-symbols-control-file usr/lib/libsDIMS.so.0.0.0
-no-symbols-control-file usr/lib/libhrpUtil-3.1.so.0.0.0
-spelling-error-in-binary ./usr/bin/openhrp-model-loader unkown unknown
+no-symbols-control-file usr/lib/*/libhrpCollision-3.1.so.0.0.0
+no-symbols-control-file usr/lib/*/libhrpPlanner-3.1.so.0.0.0
+no-symbols-control-file usr/lib/*/libsDIMS.so.0.0.0
+no-symbols-control-file usr/lib/*/libhrpUtil-3.1.so.0.0.0
