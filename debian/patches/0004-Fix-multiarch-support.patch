@@ -1,0 +1,42 @@
+From: Thomas Moulard <thomas.moulard@gmail.com>
+Date: Fri, 21 Dec 2012 19:48:17 +0900
+Subject: Fix multiarch support.
+
+Do not make the assumption that libraries are installed in lib.
+
+Forwarded: no
+Author: Thomas Moulard <thomas.moulard@gmail.com>
+---
+ cmake_modules/ConfigurePkgConfig.cmake |    3 ++-
+ cmake_modules/macros.cmake             |    6 ++++--
+ 2 files changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/cmake_modules/ConfigurePkgConfig.cmake b/cmake_modules/ConfigurePkgConfig.cmake
+index b9d3253..5ac64ac 100644
+--- a/cmake_modules/ConfigurePkgConfig.cmake
++++ b/cmake_modules/ConfigurePkgConfig.cmake
+@@ -83,5 +83,6 @@ if(PKG_CONFIG_FOUND)
+   endif()
+   
+   configure_file(openhrp3.1.pc.in openhrp3.1.pc @ONLY)
+-  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/openhrp3.1.pc DESTINATION lib/pkgconfig)
++  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/openhrp3.1.pc
++    DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE}/pkgconfig)
+ endif(PKG_CONFIG_FOUND)
+diff --git a/cmake_modules/macros.cmake b/cmake_modules/macros.cmake
+index bbbb840..4a34651 100644
+--- a/cmake_modules/macros.cmake
++++ b/cmake_modules/macros.cmake
+@@ -8,8 +8,10 @@ macro(hrplib_install_macro HRPLIB_TARGET HRPLIB_VERSION)
+   endif()
+   install(TARGETS ${HRPLIB_TARGET}
+     RUNTIME DESTINATION bin CONFIGURATIONS Release Debug
+-    LIBRARY DESTINATION lib CONFIGURATIONS Release Debug
+-    ARCHIVE DESTINATION lib CONFIGURATIONS Release Debug
++    LIBRARY DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE}
++    CONFIGURATIONS Release Debug
++    ARCHIVE DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE}
++    CONFIGURATIONS Release Debug
+   )
+ endmacro()
+ 
