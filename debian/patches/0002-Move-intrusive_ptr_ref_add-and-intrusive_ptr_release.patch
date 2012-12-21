@@ -1,7 +1,9 @@
 From: Thomas Moulard <thomas.moulard@gmail.com>
 Date: Tue, 11 Dec 2012 16:27:40 +0900
-Subject: [PATCH] Move intrusive_ptr_ref_add and intrusive_ptr_release from boost to hrp namespace
+Subject: Move intrusive_ptr_ref_add and intrusive_ptr_release from boost to hrp namespace
 
+Forwarded: no
+Author: Thomas Moulard <thomas.moulard@gmail.com>
 ---
  hrplib/hrpUtil/Referenced.h |   16 ++++++++--------
  1 files changed, 8 insertions(+), 8 deletions(-)
