@@ -1,0 +1,35 @@
+From: Thomas Moulard <thomas.moulard@gmail.com>
+Date: Fri, 21 Dec 2012 19:39:24 +0900
+Subject: Fix typo.
+
+---
+ hrplib/hrpModel/ForwardDynamicsCBM.h |    2 +-
+ server/ModelLoader/BodyInfo_impl.cpp |    2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/hrplib/hrpModel/ForwardDynamicsCBM.h b/hrplib/hrpModel/ForwardDynamicsCBM.h
+index 59eda2b..60be69a 100644
+--- a/hrplib/hrpModel/ForwardDynamicsCBM.h
++++ b/hrplib/hrpModel/ForwardDynamicsCBM.h
+@@ -62,7 +62,7 @@ namespace hrp
+ 		   
+ 		  |     |     |   | dv         |   | b1 |   | 0  |   | totalfext      |
+ 		  | M11 | M12 |   | dw         |   |    |   | 0  |   | totaltauext    |
+-		  |     |     | * |ddq (unkown)| + |    | + | d1 | = | u (known)      |
++		  |     |     | * |ddq (unknown)| + |    | + | d1 | = | u (known)      |
+ 		  |-----+-----|   |------------|   |----|   |----|   |----------------|
+ 		  | M21 | M22 |   | given ddq  |   | b2 |   | d2 |   | u2             |
+ 		
+diff --git a/server/ModelLoader/BodyInfo_impl.cpp b/server/ModelLoader/BodyInfo_impl.cpp
+index 6219d58..5108ee7 100644
+--- a/server/ModelLoader/BodyInfo_impl.cpp
++++ b/server/ModelLoader/BodyInfo_impl.cpp
+@@ -536,7 +536,7 @@ void BodyInfo_impl::readSensorNode(int linkInfoIndex, SensorInfo& sensorInfo, Vr
+             } else if(sensorTypeString=="MONO_DEPTH") {
+                 sensorInfo.specValues[3] = Camera::MONO_DEPTH;
+             } else {
+-                throw ModelLoader::ModelLoaderException("Sensor node has unkown type string");
++                throw ModelLoader::ModelLoaderException("Sensor node has unknown type string");
+             }
+ 
+             CORBA::Long width, height;
