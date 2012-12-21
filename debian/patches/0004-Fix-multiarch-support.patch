@@ -9,7 +9,9 @@ Author: Thomas Moulard <thomas.moulard@gmail.com>
 ---
  cmake_modules/ConfigurePkgConfig.cmake |    3 ++-
  cmake_modules/macros.cmake             |    6 ++++--
- 2 files changed, 6 insertions(+), 3 deletions(-)
+ hrplib/hrpCorba/CMakeLists.txt         |    6 ++++--
+ hrplib/hrpRTM/CMakeLists.txt           |    6 ++++--
+ 4 files changed, 14 insertions(+), 7 deletions(-)
 
 diff --git a/cmake_modules/ConfigurePkgConfig.cmake b/cmake_modules/ConfigurePkgConfig.cmake
 index b9d3253..5ac64ac 100644
@@ -40,3 +42,35 @@ index bbbb840..4a34651 100644
    )
  endmacro()
  
+diff --git a/hrplib/hrpCorba/CMakeLists.txt b/hrplib/hrpCorba/CMakeLists.txt
+index 0b1595a..74132a1 100644
+--- a/hrplib/hrpCorba/CMakeLists.txt
++++ b/hrplib/hrpCorba/CMakeLists.txt
+@@ -56,8 +56,10 @@ endif()
+ 
+ install(TARGETS ${target}
+ 	RUNTIME DESTINATION bin CONFIGURATIONS Release Debug
+-	LIBRARY DESTINATION lib CONFIGURATIONS Release Debug
+-	ARCHIVE DESTINATION lib CONFIGURATIONS Release Debug
++	LIBRARY DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE}
++	CONFIGURATIONS Release Debug
++	ARCHIVE DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE}
++	CONFIGURATIONS Release Debug
+ )
+ 
+ set(given_headers ORBwrap.h)
+diff --git a/hrplib/hrpRTM/CMakeLists.txt b/hrplib/hrpRTM/CMakeLists.txt
+index f189af3..e06fd1b 100644
+--- a/hrplib/hrpRTM/CMakeLists.txt
++++ b/hrplib/hrpRTM/CMakeLists.txt
+@@ -23,6 +23,8 @@ target_link_libraries(${target}
+ 
+ install(TARGETS ${target}
+   RUNTIME DESTINATION bin CONFIGURATIONS Release Debug
+-  LIBRARY DESTINATION lib CONFIGURATIONS Release Debug
+-  ARCHIVE DESTINATION lib CONFIGURATIONS Release Debug
++  LIBRARY DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE}
++  CONFIGURATIONS Release Debug
++  ARCHIVE DESTINATION lib/${CMAKE_LIBRARY_ARCHITECTURE}
++  CONFIGURATIONS Release Debug
+ )
